@@ -21,6 +21,10 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
+- Creating Resources
+- Installing Wireshark
+- Observing Different Network Protocols
+<h2>Actions and Observations</h2>
 <details>
 <summary>
   
@@ -52,9 +56,63 @@ For the Size pick Standard_E2s_v3-2 vcpus, 16 Gib memory, take note of the usern
 
 ![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/e03e1069-259a-407d-99d9-1652fda57f74)
 
+As soon as the Virtual Machine is being created we can go back to the home page and get to creating our second Virtual Machine. The Resource group will be the same RG-LAB-02 and for the Virtual name VM2, the region will be the same as the previous one and for the image pick Ubuntu Server20.04.
 
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/3902c53c-781b-4d8c-9711-183a738d8dcf)
+
+For the size pick the same one as the previous virtual machine, for the  authentication type instead of SSH public key choose password and fill in the credentials and take note of them, then review+create.
+
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/43f205bd-bb1b-4ed8-8b0f-c9ff1421b8db)
 
 </details>
 
-<h2>Actions and Observations</h2>
+<details>
+
+<summary>
+  
+   #### Install Wireshark
+</summary>
+We need to install Wireshark a network protocol analyzer application in our VM1 or Widnows 10 Pro Virtual machine. In order to do that we need to remote desktop into VM1 on your local machine, search for Renmote desktop connection.
+
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/9931ed1e-0dcc-4003-9de9-ac9a9f815668)
+
+To remote in to VM1 head back to the Virtual Machine page on Azure and click VM1 and look for its Public IP address. From there copy and paste the Public IP address and paste it in the Remote desktop application, once you do that, enter the credentials when VM1 was created.
+
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/1682abf6-7351-47d8-81cc-69b4957747eb)
+
+Once logged in, go to google and Download  and install Wireshark and keep the default settings.
+
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/ee7cbc9e-da8a-4357-86d1-9cf8be40affc)
+
+After finishing the installation of wireshark open the application and click on the small fin icon to start capturing packets.
+
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/63c2d9c4-1aca-415e-b158-13c5b768f772)
+
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/9dfe6c51-8906-4ac8-a941-075ef9ed2f48)
+
+</details>
+
+<details>
+
+  <summary>
+    
+   #### Observing Different Network Protocols
+    
+  </summary>
+  
+  Now that we've installed wireshark on VM1 we can start to observe different network protocols, first we can filter for `icmp` and ping VM2 and observe the following. 
+  
+  ![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/faa3be3e-b69a-4d79-88f1-94b4b15c95ee)
+
+  For us to be able to poing VM2 we need to get its Private IP address which we can get on the azure page for VM2.
+
+  ![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/f3b9626e-001f-4353-884f-594e2917eeac)
+
+ Once you have VM2's Private IP address head back to VM1 and open either powershell/command prompt and type in ping 10.0.0.5 (type in the private IP address)
+
+ ![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/029fbada-7ca5-4ab3-80df-a8094f795232)
+
+</details>
+
+
 
