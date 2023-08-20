@@ -104,6 +104,7 @@ After finishing the installation of wireshark open the application and click on 
   
   ![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/faa3be3e-b69a-4d79-88f1-94b4b15c95ee)
 
+##### Observing ICMP traffic
   For us to be able to poing VM2 we need to get its Private IP address which we can get on the azure page for VM2.
 
   ![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/f3b9626e-001f-4353-884f-594e2917eeac)
@@ -111,6 +112,31 @@ After finishing the installation of wireshark open the application and click on 
  Once you have VM2's Private IP address head back to VM1 and open either powershell/command prompt and type in ping 10.0.0.5 (type in the private IP address)
 
  ![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/029fbada-7ca5-4ab3-80df-a8094f795232)
+
+ Here you can see that as soon as we pinged 10.0.0.5 we get a reply on powershell, and see the packets of request and reply between VM1 `10.0.0.4` and reply from VM2 `10.0.0.5`
+
+ ![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/6895c33e-2e3d-4218-b64f-6ca13b11a16e)
+
+
+##### Blocking ICMP traffic
+To observe ICMP being blocked we need to continuously ping VM2 `10.0.0.5` with the command ping -t so we can see when the traffic gets blocked.
+This is how it appears when its perpatually pinged
+
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/3a4bed70-a712-4609-9e14-f9b50b438895)
+
+Next search for NSG `Network Security Group` on Azure, we'll add a new indbound security rule that will block ICMP traffic which we can observe on wireshark and powershell.
+
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/5e476e54-aa33-4663-9021-ae737afb5bf7)
+
+Once you add a new inbound rule pick `ICMP` for the protocol and `Deny` for the action.
+
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/a91c7e33-af42-43e9-b49d-27d70526f6f0)
+
+Once the rule has been applied, back on VM1 you can start to see that the request has timed out on powershell/command prompt and on wireshark `10.0.0.4` is sending requests and not getting any replies
+
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/630927fb-d2b6-4034-9bd4-c7993821fd65)
+
+
 
 </details>
 
