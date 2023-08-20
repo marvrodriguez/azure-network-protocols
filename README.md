@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/ad4c90ae-a5bb-420f-8de6-25f605735b27"height="70%" width="70%"/>
+  <img src="https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/94a4f6b4-2beb-4108-94c0-33f01f0de76f"height="70%" width="70%"/>
 </p>
 
 <h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
@@ -21,10 +21,15 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+<details>
+<summarry>
+  
+#### Installing Resources (Virtual Machines)
+</summarry>
+
+First we need to Install 2 Virtual Machines in Azure, one running on  Windows 10 Pro and the second one running on Ubuntu Server 20.04
+
+</details>
 
 <h2>Actions and Observations</h2>
 
