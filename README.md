@@ -117,7 +117,11 @@ After finishing the installation of wireshark open the application and click on 
 
  ![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/6895c33e-2e3d-4218-b64f-6ca13b11a16e)
 
+ To clear wireshark from the packets generated click on te green icon and continue without saving.
 
+ ![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/c03848b8-6c41-4f3b-a030-317009df4d67)
+
+ 
 ##### Blocking ICMP traffic
 To observe ICMP being blocked we need to continuously ping VM2 `10.0.0.5` with the command ping -t so we can see when the traffic gets blocked.
 This is how it appears when its perpatually pinged
@@ -137,6 +141,32 @@ Once the rule has been applied, back on VM1 you can start to see that the reques
 ![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/630927fb-d2b6-4034-9bd4-c7993821fd65)
 
 
+##### Observing SSH traffic
+ Clear the packets from ICMP by clicking the green icon, and change the filter to ssh, to ssh into VM2 in powershell type ssh with the `username@IP address`
+ In this case it would be `ssh labuser@10.0.0.5` type in yes when asked, for the password just enter the passowrd just take note that no characters will appear when you type the password in.
+
+ ![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/2f72d193-9932-4eb1-81c6-182664ecc295)
+
+ to exit ssh just type in `exit`.
+
+
+##### Observing DHCP traffic
+We can filter in Wireshark for DHCP traffic. From VM1 Windows 10 22H2, we can type in ipconfig /renew to be issued a new IP address. Now DHCP traffic can be observed in WireShark.
+
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/269928ad-0f01-4cfb-a33e-18e8712584ea)
+
+
+###### Observing DNS traffic
+Clear any packets/traffic on wireshark, and on the command line we can type in nslookup to get the ip address of whatever website we type along with nslookup.
+`nslookup www.google.com`
+
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/ea67960c-196b-43ea-a3b2-2c98763f2a07)
+
+
+##### Observing RDP or tcp.port == 3389 (Remote Desktop Protocol)
+On RDP or tcp.port ==3389 since we are currrently using remote desktop to connect to VM1 (Widnows Pro 10) traffic is continuously transmitted.
+
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/aa70955f-ddb6-4315-966c-2dacc8fdde6a)
 
 </details>
 
