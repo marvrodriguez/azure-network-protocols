@@ -22,12 +22,16 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>High-Level Steps</h2>
 
 <details>
-<summarry>
+<summary>
   
-#### Installing Resources (Virtual Machines)
-</summarry>
+#### Installing Resources in Azure (Virtual Machines)
+</summary>
 
-First we need to Install 2 Virtual Machines in Azure, one running on  Windows 10 Pro and the second one running on Ubuntu Server 20.04
+First we need to create a resource group where we will install the 2 Virtual Machines, one running on  Windows 10 Pro and the second one running on Ubuntu Server 20.04
+To create the resource group named "RG-LAB2" on your azure home page you can type on the search bar, or if you've previously accessed it, an icon will be on your home page
+
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/07ac41e2-e369-4eea-b988-ecd1d762c1bb) ![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/4fb7f95a-522e-43f4-8349-5ec735165636)
+
 
 </details>
 
