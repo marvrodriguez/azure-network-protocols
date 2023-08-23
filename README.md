@@ -170,7 +170,7 @@ On RDP or tcp.port ==3389 since we are currrently using remote desktop to connec
 
 Once done with observing the different protocols, dont forget to delete your resources, head back to the azure portal and go to resource groups and delete them.
 
-![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/e43d2d05-5435-444f-8979-33ffc7739df2)
+![image](https://github.com/marvrodriguez/azure-network-protocols/assets/141983161/d0c805b7-1797-436f-8938-7f0d16057c10)
 
 </details>
 
